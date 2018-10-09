@@ -1,0 +1,29 @@
+{
+  "name": "ber",
+  "version": "0.0.1",
+  "description": "Base language extensions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/berhalak/ber.git"
+  },
+  "author": "berhalak",
+  "license": "ISC",
+  "keywords": [
+    "typescript",
+    "language",
+    "extensions"
+  ],
+  "bugs": {
+    "url": "https://github.com/berhalak/ber/issues"
+  },
+  "homepage": "https://github.com/berhalak/ber#readme",
+  "devDependencies": {
+    "typescript": "^3.1.1"
+  },
+  "dependencies": {}
+}

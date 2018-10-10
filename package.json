@@ -5,7 +5,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test": "mocha -r ts-node/register *.spec.ts",
+    "watch": "watch-run -p '*.ts' npm run test"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,13 @@
   },
   "homepage": "https://github.com/berhalak/ber#readme",
   "devDependencies": {
-    "typescript": "^3.1.1"
+    "@types/chai": "^4.1.6",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.1",
+    "watch-run": "^1.2.5"
   },
   "dependencies": {}
 }

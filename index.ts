@@ -19,7 +19,7 @@ export class Later<T> {
             this.reject = reject
             this.resolve = resolve
         })
-    }
+    } 
 }
 
 

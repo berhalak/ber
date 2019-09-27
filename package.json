@@ -1,14 +1,7 @@
 {
   "name": "ber",
-  "version": "0.0.1",
-  "description": "Base language extensions",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "test": "mocha -r ts-node/register *.spec.ts",
-    "watch": "watch-run -p '*.ts' npm run test"
-  },
+  "version": "0.0.2",
+  "description": "Best ever resolver - local folders as package repository",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/berhalak/ber.git"
@@ -16,22 +9,19 @@
   "author": "berhalak",
   "license": "ISC",
   "keywords": [
-    "typescript",
-    "language",
-    "extensions"
+    "npm",
+    "local",
+    "package",
+    "package-manager",
+    "package-repository"
   ],
   "bugs": {
     "url": "https://github.com/berhalak/ber/issues"
   },
   "homepage": "https://github.com/berhalak/ber#readme",
-  "devDependencies": {
-    "@types/chai": "^4.1.6",
-    "@types/mocha": "^5.2.5",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.1.1",
-    "watch-run": "^1.2.5"
+  "bin": {
+    "ber": "./bin/global.js"
   },
-  "dependencies": {}
+  "preferGlobal": true,
+  "main": "index.js"
 }

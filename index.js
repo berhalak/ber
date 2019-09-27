@@ -58,10 +58,18 @@ class Context {
         writeFileSync(local_package_json, JSON.stringify(content, null, 2));
     }
 
-    installFromFolder(/** @type { string} */ folder) {
+    buildPackage(/** @type { string} */ folder) {
+        let abs = resolve(folder);
+        execSync(`npm run --prefix ${abs} build`);
+    }
+
+    installFromFolder(/** @type { string} */ folder, build) {
 
         let info = this.readPackageInfo(folder);
         this.addPackageAsBerToLocalPJ(folder, info.name);
+        if (build) {
+            this.buildPackage(folder);
+        }
         let tarFile = this.packPackage(folder, info);
         this.installModule(tarFile);
     }
@@ -73,6 +81,17 @@ class Context {
                 let value = info.ber[key];
                 console.log("package " + key);
                 this.installFromFolder(value);
+            }
+        }
+    }
+
+    build() {
+        let info = this.readPackageInfo(this.current);
+        if (info.ber) {
+            for (let key in info.ber) {
+                let value = info.ber[key];
+                console.log("package " + key);
+                this.installFromFolder(value, true);
             }
         }
     }
@@ -90,6 +109,10 @@ exports.main = function (/** @type { Array} */ args) {
         let context = new Context(process.cwd());
         console.log("Restoring packages... ");
         context.update();
+    } else if (args.length == 1 && args[0] == "b") {
+        let context = new Context(process.cwd());
+        console.log("Building local packages... ");
+        context.build();
     } else {
         console.log("usage: ber i [<path_to_package>]");
     }

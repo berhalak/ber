@@ -30,6 +30,12 @@ class Context {
             mkdirSync("local_modules");
         }
 
+        let counter = 5;
+        while (!existsSync(oldPath) && counter--) {
+            var waitTill = new Date(new Date().getTime() + seconds * 1000);
+            while (waitTill > new Date()) { }
+        }
+
         renameSync(oldPath, newPath);
 
         return newPath;

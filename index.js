@@ -13,12 +13,12 @@ class Context {
     }
 
     installModule(file) {
-        exec(`npm i ${file}`);
+        execSync(`npm i ${file}`);
     }
 
     packPackage(/** @type { string} */ folder, info) {
         let abs = resolve(folder);
-        exec(`npm pack ${abs}`);
+        execSync(`npm pack ${abs}`);
         let name = info.name;
         name = name.replace("/", "_").replace("@", "");
         name = `${name}-${info.version}.tgz`;
@@ -59,6 +59,17 @@ class Context {
         let tarFile = this.packPackage(folder, info);
         this.installModule(tarFile);
     }
+
+    update() {
+        let info = this.readPackageInfo(this.current);
+        if (info.ber) {
+            for (let key in info.ber) {
+                let value = info.ber[key];
+                console.log("package " + key);
+                this.installFromFolder(value);
+            }
+        }
+    }
 }
 
 
@@ -69,7 +80,11 @@ exports.main = function (/** @type { Array} */ args) {
         let context = new Context(process.cwd());
         console.log("Instaling package... " + args[1])
         context.installFromFolder(args[1]);
+    } else if (args.length == 1 && args[0] == "i") {
+        let context = new Context(process.cwd());
+        console.log("Restoring packages... ");
+        context.update();
     } else {
-        console.log("usage: ber i <path_to_package>");
+        console.log("usage: ber i [<path_to_package>]");
     }
 }

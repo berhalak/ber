@@ -20,7 +20,7 @@ class Context {
         let abs = resolve(folder);
         execSync(`npm pack ${abs}`);
         let name = info.name;
-        name = name.replace("/", "_").replace("@", "");
+        name = name.replace("/", "-").replace("@", "");
         name = `${name}-${info.version}.tgz`;
 
         let oldPath = name;
@@ -32,7 +32,7 @@ class Context {
 
         let counter = 5;
         while (!existsSync(oldPath) && counter--) {
-            var waitTill = new Date(new Date().getTime() + seconds * 1000);
+            var waitTill = new Date(new Date().getTime() + 1 * 1000);
             while (waitTill > new Date()) { }
         }
 

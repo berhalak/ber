@@ -123,7 +123,7 @@ class Context {
         }
     }
 
-    async buildAndUpdate(folder) {
+    async buildAndPackPackage(folder) {
         await this.buildPackage(folder);
         return await this.packPackage(folder);
     }
@@ -131,14 +131,10 @@ class Context {
     async buildDeps() {
         let info = await this.readPackageInfo(this.current);
         if (info.ber) {
-            let builds = [];
             for (let key in info.ber) {
                 let folder = info.ber[key];
-                builds.push(this.buildAndUpdate(folder));
-            }
-            let tars = await Promise.all(builds);
-            for (let tar of tars) {
-                await this.installTar(tar);
+                let info = await this.buildAndPackPackage(folder);
+                await this.installTar(info);
             }
         }
     }

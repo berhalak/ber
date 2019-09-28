@@ -15,3 +15,5 @@ ber i // updates all local packages
 ber b // builds and install all dependencies
 
 Packages are stored as tgz files in folder ./local_modules
+
+Primary it is used to deploy functions to firebase with local packages

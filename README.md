@@ -12,4 +12,6 @@ ber i <path_to_package>
 
 ber i // updates all local packages
 
+ber b // builds and install all dependencies
+
 Packages are stored as tgz files in folder ./local_modules

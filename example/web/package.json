@@ -8,5 +8,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "ber": {
+    "lib_a": "..\\libs\\lib_a",
+    "lib_b": "..\\libs\\lib_b"
+  },
+  "dependencies": {
+    "lib_a": "file:local_modules/lib_a-1.0.0.tgz",
+    "lib_b": "file:local_modules/lib_b-1.0.0.tgz"
+  }
 }

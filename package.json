@@ -1,6 +1,6 @@
 {
   "name": "ber",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Best ever resolver - local folders as package repository",
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
     "ber": "./bin/global.js"
   },
   "preferGlobal": true,
-  "main": "index.js"
+  "main": "index.js",
+  "dependencies": {
+    "promise-fs": "^2.1.1"
+  }
 }

@@ -18,12 +18,13 @@ Primary it is used to deploy functions to firebase with local packages
 
 Go to example directory (example) and run:
 
+```
 cd ./libs/lib_a
 ber i ../libs/lib_b // install lib_b in lib_a
 cd ../../web // go to web
 ber i ../libs/lib_a
 ber i ../libs/lib_b
-
+```
 Example directory has dependency tree:
 
 - web (depends on lib_a, and lib_b)

@@ -13,7 +13,11 @@
     "local",
     "package",
     "package-manager",
-    "package-repository"
+    "package-repository",
+    "dependency",
+    "resolve",
+    "build",
+    "workspaces"
   ],
   "bugs": {
     "url": "https://github.com/berhalak/ber/issues"

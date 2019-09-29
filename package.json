@@ -1,6 +1,6 @@
 {
   "name": "ber",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Best ever resolver - local folders as package repository",
   "repository": {
     "type": "git",

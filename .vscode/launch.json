@@ -8,12 +8,18 @@
             "type": "node",
             "request": "launch",
             "name": "Launch Program",
-            "program": "${workspaceFolder}\\bin\\global.js",
+            "program": "${workspaceFolder}\\dist\\bin\\global.js",
             "args": [
                 "i",
                 "..\\libs\\lib_a"
             ],
-            "cwd": "${workspaceFolder}\\example\\web"
+            "cwd": "${workspaceFolder}\\example\\web",
+            "smartStep": true,
+            "skipFiles": [
+                "<node_internals>/**/*.js",
+                "${workspaceFolder}/node_modules/**/*.js",
+                "${workspaceFolder}/lib/**/*.js"
+            ]
         }
     ]
 }

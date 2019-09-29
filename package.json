@@ -1,6 +1,6 @@
 {
   "name": "ber",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Best ever resolver - local folders as package repository",
   "repository": {
     "type": "git",
@@ -17,7 +17,10 @@
     "dependency",
     "resolve",
     "build",
-    "workspaces"
+    "workspaces",
+    "lerna",
+    "local-development",
+    "packages"
   ],
   "bugs": {
     "url": "https://github.com/berhalak/ber/issues"

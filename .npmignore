@@ -1,0 +1,11 @@
+src
+tsconfig.json
+*.spec*
+jest.config.js
+.vscode
+**/main*ts
+dist/main.*
+*.tgz
+*.yml
+example/
+src/

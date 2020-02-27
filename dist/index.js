@@ -79,7 +79,7 @@ class Tgz {
         return await fs_extra_1.default.pathExists(this.path());
     }
 }
-const local_modules = ".local_modules";
+const local_modules = "local_modules";
 const dotOutput = ".out";
 class Package {
     constructor(path) {
@@ -198,7 +198,7 @@ exports.main = async function (/** @type { Array} */ args) {
     if (args.length == 2 && args[0] == "i") {
         let self = new Package(process.cwd());
         let ref = args[1];
-        console.log("Instaling package... " + args[1]);
+        console.log("Installing package... " + args[1]);
         await self.install(new Package(ref));
     }
     else if (args.length == 1 && args[0] == "i") {

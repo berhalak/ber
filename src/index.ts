@@ -88,7 +88,7 @@ class Tgz {
     }
 }
 
-const local_modules = ".local_modules";
+const local_modules = "local_modules";
 const dotOutput = ".out";
 
 class Package {
@@ -233,7 +233,7 @@ exports.main = async function (/** @type { Array} */ args: any[]) {
     if (args.length == 2 && args[0] == "i") {
         let self = new Package(process.cwd());
         let ref = args[1] as string;
-        console.log("Instaling package... " + args[1])
+        console.log("Installing package... " + args[1])
         await self.install(new Package(ref));
     } else if (args.length == 1 && args[0] == "i") {
         let self = new Package(process.cwd());

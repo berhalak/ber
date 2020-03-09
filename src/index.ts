@@ -61,7 +61,7 @@ type PackageJson = { scripts: any, ber: any, name: string, version: string }
 class Npm {
     static async install(file: any, cwd: string) {
         file = Path.relative(cwd, file);
-        await run(`npm install ${file}`, cwd);
+        await run(`yarn add ${file}`, cwd);
     }
 
 }
@@ -180,7 +180,7 @@ class Package {
             await File.mkdir(outputPath);
         }
 
-        await run("npm pack ../", outputPath);
+        await run("yarn pack ../", outputPath);
         console.log("Build finish " + await this.name());
     }
 

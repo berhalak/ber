@@ -56,7 +56,7 @@ function run(command, cwd) {
 class Npm {
     static async install(file, cwd) {
         file = path_1.default.relative(cwd, file);
-        await run(`npm install ${file}`, cwd);
+        await run(`yarn add ${file}`, cwd);
     }
 }
 class Tgz {
@@ -156,7 +156,7 @@ class Package {
         if (!await fs_extra_1.default.pathExists(outputPath)) {
             await fs_extra_1.default.mkdir(outputPath);
         }
-        await run("npm pack ../", outputPath);
+        await run("yarn pack ../", outputPath);
         console.log("Build finish " + await this.name());
     }
     async clean() {

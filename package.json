@@ -1,6 +1,6 @@
 {
   "name": "ber",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Best ever resolver - local folders as package repository",
   "repository": {
     "type": "git",
@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "@types/fs-extra": "^8.1.0",
-    "@types/node": "^13.7.6",
+    "@types/node": "^13.9.0",
     "@types/rimraf": "^2.0.3",
-    "typescript": "3.8.2"
+    "typescript": "3.8.3"
   },
   "scripts": {
     "build": "tsc"

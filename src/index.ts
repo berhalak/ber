@@ -180,7 +180,7 @@ class Package {
             await File.mkdir(outputPath);
         }
 
-        await run("yarn pack ../", outputPath);
+        await run("npm pack ../", outputPath);
         console.log("Build finish " + await this.name());
     }
 

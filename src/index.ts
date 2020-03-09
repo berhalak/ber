@@ -59,9 +59,10 @@ function run(command: string, cwd?: string) {
 type PackageJson = { scripts: any, ber: any, name: string, version: string }
 
 class Npm {
-    static async install(file: any, cwd: string) {
+    static async install(file: string, cwd: string) {
         file = Path.relative(cwd, file);
-        await run(`yarn add ${file}`, cwd);
+        file = file.split("\\").join("/");
+        await run(`yarn add file:${file}`, cwd);
     }
 
 }

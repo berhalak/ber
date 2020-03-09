@@ -56,7 +56,8 @@ function run(command, cwd) {
 class Npm {
     static async install(file, cwd) {
         file = path_1.default.relative(cwd, file);
-        await run(`yarn add ${file}`, cwd);
+        file = file.split("\\").join("/");
+        await run(`yarn add file:${file}`, cwd);
     }
 }
 class Tgz {
